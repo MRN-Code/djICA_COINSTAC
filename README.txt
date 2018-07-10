@@ -5,7 +5,7 @@ Status: working
 Improvements to be done:  
 
 1_ Optimizing the messages passed between the Remote and the locals
-2_ Tuning the GD algorithms. The results are not comparable with scikitlab's fastICA (centralized)
+2_ Tuning the GD algorithms. The results are not comparable with SciKit learn fastICA (centralized)
 3_ Random selection of local data for local gradients has not been yet performed, thus Vanilla version. 
 
 
