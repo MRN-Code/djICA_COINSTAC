@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "name": "djICA",
+    "id": "djica_test",
+    "version": "v1.0.0",
+    "repository": "https:\/\/github.com\/jafar\/djICA_test",
+    "description": "Decentralized Joint Independent Component Analysis"
+  },
+  "computation": {
+    "type": "docker",
+    "dockerImage": "djica_test",
+    "command": [
+      "python",
+      "\/computation\/local.py"
+    ],
+    "remote": {
+      "type": "docker",
+      "dockerImage": "djica_test",
+      "command": [
+        "python",
+        "\/computation\/remote.py"
+      ]
+    },
+    "input": {
+      "cov": {
+        "type": "array"
+      }
+    },
+    "output": {
+      "Beta": {
+        "type": "array"
+      }
+    }
+  }
+}
