@@ -3,7 +3,7 @@
 """
 Created on Mon Jul  9 23:02:04 2018
 
-@author: JAFAR Mohammadi (Aco)
+@author: aaco
 """
 
 import json
@@ -25,13 +25,21 @@ def remote_ica(args):
     maxItr = 10
     no_change = 1e-8
     
-    # recover the iteration values remote cash
-    
-    U = np.array(input_list['local0']['U'])
-    itr = args['input']['local0']['iter']
-    W = np.array(args['input']['local0']['W'])
-    b = np.array(args['input']['local0']['b'])
-    rho = args['input']['local0']['rho']
+    # recover the iteration values: 
+    # first round from locals 
+    if 'U' in input_list['local0']: 
+        U = np.array(input_list['local0']['U'])
+        itr = args['input']['local0']['iter']
+        W = np.array(args['input']['local0']['W'])
+        b = np.array(args['input']['local0']['b'])
+        rho = args['input']['local0']['rho']
+    # later always from cash:    
+    elif 'U' in args['cache']: 
+        U = np.array(args['cache']['U'])
+        itr = args['cache']['iter']
+        W = np.array(args['cache']['W'])
+        b = np.array(args['cache']['b'])
+        rho = args['cache']['rho']
     
     K = len(W)   # num indpendent components num_ind_compo
     

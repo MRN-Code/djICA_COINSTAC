@@ -3,7 +3,7 @@
 """
 Created on Mon Jul  9 22:21:43 2018
 
-@author: JAFAR Mohammadi (Aco)
+@author: aaco
 """
 
 import json
@@ -78,6 +78,7 @@ def local_ica(args):
         # iteration > 1 this will be run
         
         input_list = args['input']
+        
         Xred = np.array(args['cache']['Xred'])
         U = np.array(args['cache']['U'])
         N = args['cache']['N']
@@ -105,8 +106,8 @@ def local_ica(args):
         computation_output = {
             "output": {
                 'G' : G.tolist(), 'h' : h.tolist(),
-                         'rho' : rho, 'W' : W.tolist(), 'b' : b.tolist(),
-                         'iter': itr, 'U': U.tolist()
+#                         'rho' : rho, 'W' : W.tolist(), 'b' : b.tolist(),
+#                         'iter': itr, 'U': U.tolist()
                       }, 
             
             "cache": { 'Xred': Xred.tolist(), 'U': U.tolist(), 'N': N, 'D': D }
